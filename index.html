@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/main.css">
+
+    <title>WORK</title>
+</head>
+<body>
+    <h3>Клиентсоке приложение для получения данных от web-сервисов</h3>
+<h4>Сервис онлайн-перевода Яндекс</h4>
+
+<form>
+
+  <! -- textarea для ввода текста (исходный) -->
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1">Введите текст для перевода</label>
+    <textarea class="form-control" id="source"></textarea>
+  </div>
+  
+  <! -- select языков с Яндекс API Переводчика -->
+  <div class="form-group">
+    <label for="exampleFormControlSelect1">Выберите язык</label>
+    <select class="form-control" name="to" id="lang" >
+      <option value="az">азербайджанский</option>
+      <option value="ml">малаялам</option>
+      <option value="sq">албанский</option>
+      <option value="mt">мальтийский</option>
+      <option value="am">амхарский</option>
+      <option value="mk">македонский</option>
+      <option value="en" selected="selected">английский</option>
+      <option value="ar">арабский</option>
+      <option value="mr">маратхи</option>
+      <option value="hy">армянский</option>
+      <option value="mhr">марийский</option>
+      <option value="af">африкаанс</option>
+      <option value="mn">монгольский</option>
+      <option value="eu">баскский</option>
+      <option value="de">немецкий</option>
+      <option value="ba">башкирский</option>
+      <option value="ne">непальский</option>
+      <option value="be">белорусский</option>
+      <option value="no">норвежский</option>
+      <option value="bn">бенгальский</option>
+      <option value="pa">панджаби</option>
+      <option value="my">бирманский</option>
+      <option value="pap">папьяменто</option>
+      <option value="bg">болгарский</option>
+      <option value="fa">персидский</option>
+      <option value="bs">боснийский</option>
+      <option value="pl">польский</option>
+      <option value="cy">валлийский</option>
+      <option value="pt">португальский</option>
+      <option value="hu">венгерский</option>
+      <option value="ro">румынский</option>
+      <option value="vi">вьетнамский</option>
+      <option value="ru">русский</option>
+      <option value="ht">гаитянский (креольский)</option>
+      <option value="ceb">себуанский</option>
+      <option value="gl">галисийский</option>
+      <option value="sr">сербский</option>
+      <option value="nl">голландский</option>
+      <option value="si">сингальский</option>
+      <option value="mrj">горномарийский</option>
+      <option value="sk">словацкий</option>
+      <option value="el">греческий</option>
+      <option value="sl">словенский</option>
+      <option value="ka">грузинский</option>
+      <option value="sw">суахили</option>
+      <option value="gu">гуджарати</option>
+      <option value="su">сунданский</option>
+      <option value="da">датский</option>
+      <option value="tg">таджикский</option>
+      <option value="he">иврит</option>
+      <option value="th">тайский</option>
+      <option value="yi">идиш</option>
+      <option value="tl">тагальский</option>
+      <option value="id">индонезийский</option>
+      <option value="ta">тамильский</option>
+      <option value="ga">ирландский</option>
+      <option value="tt">татарский</option>
+      <option value="it">итальянский</option>
+      <option value="te">телугу</option>
+      <option value="is">исландский</option>
+      <option value="tr">турецкий</option>
+      <option value="es">испанский</option>
+      <option value="udm">удмуртский</option>
+      <option value="kk">казахский</option>
+      <option value="uz">узбекский</option>
+      <option value="kn">каннада</option>
+      <option value="uk">украинский</option>
+      <option value="ca">каталанский</option>
+      <option value="ur">урду</option>
+      <option value="ky">киргизский</option>
+      <option value="fi">финский</option>
+      <option value="zh">китайский</option>
+      <option value="fr">французский</option>
+      <option value="ko">корейский</option>
+      <option value="hr">хорватский</option>
+      <option value="cs">чешский</option>
+      <option value="sv">шведский</option>
+      <option value="ja">японский</option>
+    </select>
+  </div>
+
+  <! -- textarea для вывода текста (перевод) -->
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1">Перевод</label>
+    <textarea class="form-control" id="output"></textarea>
+  </div>
+  
+    <! -- textarea для вывода JSON объекта -->
+  <div class="form-group" id="jsonDiv">
+    <label for="exampleFormControlTextarea1">JSON ответ</label>
+    <textarea class="form-control" id="json"></textarea>
+  </div>
+  
+  <! -- textarea для вывода запроса на сервер -->
+  <div class="form-group" id="postDiv">
+    <label for="exampleFormControlTextarea1">Запрос на сервер</label>
+    <textarea class="form-control" id="postArea"></textarea>
+  </div>
+  
+    <! -- textarea для вывода url запроса -->
+  <div class="form-group" id="urlDiv">
+    <label for="exampleFormControlTextarea1">URL запроса</label>
+    <textarea class="form-control" id="urlArea"></textarea>
+  </div>
+  
+    <! -- textarea для вывода ключа запроса -->
+  <div class="form-group" id="keyDiv">
+    <label for="exampleFormControlTextarea1">Ключ</label>
+    <textarea class="form-control" id="keyArea"></textarea>
+  </div>
+  
+</form>
+
+<! -- button события -->
+<button class="btn btn-primary mb-2" id="translate">Перевести</button>
+
+<script src="/index.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</body>
+</html>
